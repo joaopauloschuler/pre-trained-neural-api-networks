@@ -55,8 +55,32 @@ You can follow this example for classifying a single image:
     NN.Free;
   end;
 ```
-The above source code is located at:
-https://github.com/joaopauloschuler/neural-api/blob/master/examples/SimplePlantLeafDisease/TestPlantLeafDiseaseTrainedModelOneImage.pas
+The above source code is located at [TestPlantLeafDiseaseTrainedModelOneImage.pas](https://github.com/joaopauloschuler/neural-api/blob/master/examples/SimplePlantLeafDisease/TestPlantLeafDiseaseTrainedModelOneImage.pas).
 
 If you would like to test against the actual training dataset, you can follow this example:
-https://github.com/joaopauloschuler/neural-api/blob/master/examples/SimplePlantLeafDisease/TestPlantLeafDiseaseTrainedModel.pas
+[TestPlantLeafDiseaseTrainedModel.pas](https://github.com/joaopauloschuler/neural-api/blob/master/examples/SimplePlantLeafDisease/TestPlantLeafDiseaseTrainedModel.pas).
+
+The trained neural network is loaded with
+```    NN := TNNet.Create;
+    NN.LoadFromFile('SimplePlantLeafDisease-20230720.nn');
+```
+
+The image is loaded, resized and scaled from [0,255] to [-2,+2] with:
+```    ImageFileName := 'plant/Apple___Black_rot/image (1).JPG';
+    WriteLn('Loading image: ',ImageFileName);
+
+    if LoadImageFromFileIntoVolume(
+      ImageFileName, vInputImage, InputSizeX, InputSizeY,
+      {EncodeNeuronalInput=}csEncodeRGB) then       
+```
+
+The NN is run with plenty of tricks specific for computer vision with:
+```
+      NeuralFit.ClassifyImage(NN, vInputImage, vOutput);
+```
+
+The output of the neural network is placed at `vOutput`. The actual predicted class can be found with:
+```
+      vOutput.GetClass()
+```
+
