@@ -60,13 +60,26 @@ The above source code is located at [TestPlantLeafDiseaseTrainedModelOneImage.pa
 If you would like to test against the actual training dataset, you can follow this example:
 [TestPlantLeafDiseaseTrainedModel.pas](https://github.com/joaopauloschuler/neural-api/blob/master/examples/SimplePlantLeafDisease/TestPlantLeafDiseaseTrainedModel.pas).
 
-The trained neural network is loaded with
-```    NN := TNNet.Create;
+The trained neural network (model) is loaded with
+```
+    NN := TNNet.Create;
     NN.LoadFromFile('SimplePlantLeafDisease-20230720.nn');
 ```
 
+The input image size is found from the loaded model with:
+```
+    InputSizeX := NN.Layers[0].Output.SizeX;
+    InputSizeY := NN.Layers[0].Output.SizeY;
+```
+
+The number of classes is found from the loaded model with:
+```
+    NumberOfClasses := NN.GetLastLayer().Output.Size;
+```    
+
 The image is loaded, resized and scaled from [0,255] to [-2,+2] with:
-```    ImageFileName := 'plant/Apple___Black_rot/image (1).JPG';
+```
+    ImageFileName := 'plant/Apple___Black_rot/image (1).JPG';
     WriteLn('Loading image: ',ImageFileName);
 
     if LoadImageFromFileIntoVolume(
