@@ -2,7 +2,7 @@
 This repository contains pre-trained neural network models for the [CAI neural API](https://github.com/joaopauloschuler/neural-api).
 
 ## Super resolution pre-trained neural network model
-You can icrease your own images with this [code](https://github.com/joaopauloschuler/neural-api/blob/master/examples/SuperResolution/SuperResolution.lpr) and its pre-trained [model](https://github.com/joaopauloschuler/neural-api/blob/master/examples/SuperResolution/super-resolution-7-64-sep.nn). After compiling [the super resolution the code](https://github.com/joaopauloschuler/neural-api/blob/master/examples/SuperResolution/SuperResolution.lpr), you will be able to increase the resolution of your own images with:
+You can icrease the resolution of your own images with this [code](https://github.com/joaopauloschuler/neural-api/blob/master/examples/SuperResolution/SuperResolution.lpr) and its pre-trained [model](https://github.com/joaopauloschuler/neural-api/blob/master/examples/SuperResolution/super-resolution-7-64-sep.nn). After compiling [the super resolution code](https://github.com/joaopauloschuler/neural-api/blob/master/examples/SuperResolution/SuperResolution.lpr), you will be able to increase the resolution of your own images via command line:
 ```
 #SuperResolution -i street.png -o street2.png
 ```
