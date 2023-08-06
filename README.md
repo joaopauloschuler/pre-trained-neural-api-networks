@@ -1,4 +1,4 @@
-# Pre-trained Neural Api Networks (Models)
+# Pre-trained Neural API Networks (Models)
 This repository contains pre-trained neural network models for the [CAI neural API](https://github.com/joaopauloschuler/neural-api).
 
 ## Super resolution pre-trained neural network model
