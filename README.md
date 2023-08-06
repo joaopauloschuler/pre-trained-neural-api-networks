@@ -1,6 +1,14 @@
 # Pre-trained Neural Api Networks (Models)
 This repository contains pre-trained neural network models for the [CAI neural API](https://github.com/joaopauloschuler/neural-api).
 
+## Super resolution pre-trained neural network model
+You can icrease your own images with this [code](https://github.com/joaopauloschuler/neural-api/blob/master/examples/SuperResolution/SuperResolution.lpr) and its pre-trained [model](https://github.com/joaopauloschuler/neural-api/blob/master/examples/SuperResolution/super-resolution-7-64-sep.nn). After compiling [the super resolution the code](https://github.com/joaopauloschuler/neural-api/blob/master/examples/SuperResolution/SuperResolution.lpr), you will be able to increase the resolution of your own images with:
+```
+#SuperResolution -i street.png -o street2.png
+```
+
+The parameter `-i` defines the input file while `-o` defines the output file. You can find more details at this [link](https://github.com/joaopauloschuler/neural-api/tree/master/examples/SuperResolution).
+
 ## Image classification pre-trained neural network models
 
 | Dataset | Source Code | Input Size | Trained Model | Parameters    | Test Accuracy | 
